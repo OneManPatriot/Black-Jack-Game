@@ -1,9 +1,9 @@
 //	  +==============================================+
-//	  |		Program Name: "Black-Jack Game"			 |
-//	  |		Programmer Name : Greg Groshko			 |
-//	  |		Version # : 1.0							 |
-//	  |		File Name : BlackJack.cpp				 |
-//    +==============================================+
+//	  |	Program Name: "Black-Jack Game"	 	 |
+//	  |	Programmer Name : Greg Groshko		 |
+//	  |	Version # : 1.0				 |
+//	  |	File Name : BlackJack.cpp		 |
+//   	  +==============================================+
 
 #include<iostream>
 #include<windows.h>
@@ -12,11 +12,11 @@
 #include"gameLogicSetup.h"
 using namespace std;
 
-bool menu();								//Menu Screen
+bool menu();						//Menu Screen
 void setup(gameLogicSetup&);				//Sets up decks and first two cards
-void bet(int&, int&);						//Betting System
+void bet(int&, int&);					//Betting System
 void drawScene(gameLogicSetup&);			//Draws the player turn screen
-void drawSceneFinal(gameLogicSetup&);		//Draws the dealer turn screen
+void drawSceneFinal(gameLogicSetup&);			//Draws the dealer turn screen
 int PlayerTurn(gameLogicSetup&);			//Logic for player turn
 void DealerTurn(gameLogicSetup&);			//Logic for dealer turn
 
@@ -30,9 +30,9 @@ int main() {
 
 	while (play)
 	{
-		int money = 10000, betMoney = 0;	//Initialize Money and Bet values
-		play = menu();						//Menu Screen
-		if (!play)							//Ends the game if quit from menu
+		int money = 10000, betMoney = 0;		//Initialize Money and Bet values
+		play = menu();					//Menu Screen
+		if (!play)					//Ends the game if quit from menu
 		{
 			return 0;
 		}
@@ -40,20 +40,19 @@ int main() {
 		bool gameOverMoney = false;			//Sets Game Over parameter to false (Money == 0)
 		while (!gameOverMoney) {			//While Player has money, Play Game
 
-			system("cls");					//Clears Screen
+			system("cls");				//Clears Screen
 			gameLogicSetup Game;			//Setup Game class
-			setup(Game);					//Sets up dealer and player decks and first two cards
+			setup(Game);				//Sets up dealer and player decks and first two cards
 			bool playerStop = false;		//Sets Player STAY function to false
 			bool gameOver = false;			//Allows one game to begin
 
 			bet(money, betMoney);			//Bet function
-			while (!gameOver) {				//Begins game
+			while (!gameOver) {			//Begins game
 				while (!playerStop) {		//Begins Players turn
-					system("cls");			//Clears Screen
-					drawScene(Game);		//Draws Player's turn screen
+					system("cls");		//Clears Screen
+					drawScene(Game);	//Draws Player's turn screen
 
-											//Logic for player's turn
-					if (Game.getPlayerHand() == 21)
+					if (Game.getPlayerHand() == 21) //Logic for player's turn
 					{
 						choice = 1;
 					}
