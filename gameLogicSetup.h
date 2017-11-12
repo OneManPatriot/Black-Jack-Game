@@ -1,9 +1,9 @@
 //	  +==============================================+
-//	  |		Program Name: "Black-Jack Game"			 |
-//	  |		Programmer Name : Greg Groshko			 |
-//	  |		Version # : 1.0							 |
-//	  |		File Name : gameLogicSetup.h			 |
-//    +==============================================+
+//	  |	Program Name: "Black-Jack Game" 	 |
+//	  |	Programmer Name : Greg Groshko  	 |
+//	  |	Version # : 1.0			       	 |
+//	  |	File Name : gameLogicSetup.h		 |
+//   	  +==============================================+
 
 #ifndef GAMELOGICSETUP_H
 #define GAMELOGICSETUP_H
@@ -16,15 +16,15 @@ class gameLogicSetup {
 //Private Variables
 private:
 	short int deck[13] = { 11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10 };			//Card Deck
-	char letterDeck[13] = { 'A','2','3','4','5','6','7','8','9','T','J','Q','K' };	//Letter Deck
-	short int cardsDrawn[13] = { 0,0,0,0,0,0,0,0,0,0,0,0,0 };						//Cards Drawn from Deck
-	short int dealerDeck[12] = { 0,0,0,0,0,0,0,0,0,0,0,0 };							//Dealer's Deck from Card Deck
-	char dealerLetterDeck[12];														//Dealer's Letter Deck
-	short int playerDeck[12] = { 0,0,0,0,0,0,0,0,0,0,0,0 };							//Player's Deck from Card Deck
-	char playerLetterDeck[12];														//Player's Letter Deck
+	char letterDeck[13] = { 'A','2','3','4','5','6','7','8','9','T','J','Q','K' };		//Letter Deck
+	short int cardsDrawn[13] = { 0,0,0,0,0,0,0,0,0,0,0,0,0 };				//Cards Drawn from Deck
+	short int dealerDeck[12] = { 0,0,0,0,0,0,0,0,0,0,0,0 };					//Dealer's Deck from Card Deck
+	char dealerLetterDeck[12];								//Dealer's Letter Deck
+	short int playerDeck[12] = { 0,0,0,0,0,0,0,0,0,0,0,0 };					//Player's Deck from Card Deck
+	char playerLetterDeck[12];								//Player's Letter Deck
 	short int dealerHand, playerHand, dealerTurnCard,								
-		playerTurnCard, dealerCardAmount, playerCardAmount;							// Initialize starting values (continue in constructor)
-	short int dealerAces, playerAces;												//Number of Aces in Decks
+		playerTurnCard, dealerCardAmount, playerCardAmount;				// Initialize starting values (continue in constructor)
+	short int dealerAces, playerAces;							//Number of Aces in Decks
 
 //Public Functions
 public:
@@ -32,28 +32,28 @@ public:
 	//Initialize Constructor
 	gameLogicSetup() 
 	{
-		dealerHand = 0;																//Dealer's Hand Count
-		playerHand = 0;																//Player's Hand Count
-		dealerTurnCard = 0;															//Number of Dealer's Cards Turned
-		playerTurnCard = 0;															//Number of Player's Cards Turned
-		dealerCardAmount = 0;														//Number of Cards on Table
-		playerCardAmount = 0;														//Number of Cards on Table
-		dealerAces = 0;																//Number of Dealer Aces in Deck
-		playerAces = 0;																//Number of Player Aces in Deck
+		dealerHand = 0;									//Dealer's Hand Count
+		playerHand = 0;									//Player's Hand Count
+		dealerTurnCard = 0;								//Number of Dealer's Cards Turned
+		playerTurnCard = 0;								//Number of Player's Cards Turned
+		dealerCardAmount = 0;								//Number of Cards on Table
+		playerCardAmount = 0;								//Number of Cards on Table
+		dealerAces = 0;									//Number of Dealer Aces in Deck
+		playerAces = 0;									//Number of Player Aces in Deck
 	}
 
 	//Set Value or Character Functions
-	void decreaseDealerHandAce();													//Decrease Dealer's Hand Amount if there is an ace and hand count > 21
-	void decreasePlayerHandAce();													//Decrease Player's Hand Amount if there is an ace and hand count > 21
-	void setDealerDeck();															//Sets Dealer's Deck from main card deck
-	void setPlayerDeck();															//Sets Player's Deck from main card deck
-	void setDealerTurnCard();														//Sets number of cards turned (For Next Card Logic and Drawing Scene)
+	void decreaseDealerHandAce();								//Decrease Dealer's Hand Amount if there is an ace and hand count > 21
+	void decreasePlayerHandAce();								//Decrease Player's Hand Amount if there is an ace and hand count > 21
+	void setDealerDeck();									//Sets Dealer's Deck from main card deck
+	void setPlayerDeck();									//Sets Player's Deck from main card deck
+	void setDealerTurnCard();								//Sets number of cards turned (For Next Card Logic and Drawing Scene)
 	void setPlayerTurnCard();										
-	void setCardsDrawn(short int);													//Sets Cards Drawn (Keeps track of same card (4 of same value, different suit))
-	void setDealerAces();															//Sets Dealer Aces
-	void setPlayerAces();															//Sets Player Aces
-	void setDealerLetterDeck(short int, char);										//Sets Dealer Letter Deck (for Drawing Scene)
-	void setPlayerLetterDeck(short int, char);										//Sets Player Letter Deck (For Drawing Scene)
+	void setCardsDrawn(short int);								//Sets Cards Drawn (Keeps track of same card (4 of same value, different suit))
+	void setDealerAces();									//Sets Dealer Aces
+	void setPlayerAces();									//Sets Player Aces
+	void setDealerLetterDeck(short int, char);						//Sets Dealer Letter Deck (for Drawing Scene)
+	void setPlayerLetterDeck(short int, char);						//Sets Player Letter Deck (For Drawing Scene)
 
 	//Get Value or Character Functions
 	short int getCardsDrawn(short int);
@@ -65,13 +65,13 @@ public:
 	short int getPlayerDeck(short int);
 	short int getDealerAces();
 	short int getPlayerAces();
-	char getLetterDeck(short int);
+	char getLetterDeck(short int);								//Gets letter from Letter Deck
 	char getDealerLetterDeck(short int);
 	char getPlayerLetterDeck(short int);
 
 	//Draw Functions
-	void getDealerNextCard();
-	void getPlayerNextCard();
+	void getDealerNextCard();								//Gets Dealer's Next Card
+	void getPlayerNextCard();								//Gets Player's Next Card
 };
 
 
